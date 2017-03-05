@@ -119,13 +119,13 @@ public class FileManager {
         System.out.println("Your operation system is " + os);
 
         if (os.contains("Windows")) {
-            System.out.println("Please, input a path and file name in format (example): C:\\Users\\user\\test.txt");
+            System.out.println("Please, input a path and file name in format (example): C:\\Users\\user\\1.txt");
             path = reader.readLine();
-        } else if (os.contains("Mac")) {
-            System.out.println("Please, input a path and file name in format (example) /Users/user/projects/test.txt");
+        } else if (os.contains("Mac OS")) {
+            System.out.println("Please, input a path and file name in format (example) /Users/user/projects/1.txt");
             path = reader.readLine();
         } else if (os.contains("Linux")) {
-            System.out.println("Please, input a path and file name in format (example) /home/user/projects/test.txt");
+            System.out.println("Please, input a path and file name in format (example) /home/user/projects/1.txt");
             path = reader.readLine();
         } else {
             System.out.println("Please, input a path and file name");
