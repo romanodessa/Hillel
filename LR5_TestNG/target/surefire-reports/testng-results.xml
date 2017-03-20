@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Parallel test suite" duration-ms="183" started-at="2017-03-20T15:49:48Z" finished-at="2017-03-20T15:49:48Z">
+    <groups>
+      <group name="checkintest">
+        <method signature="SimpleTest.testMethod1(java.lang.String)[pri:0, instance:SimpleTest@6be46e8f]" name="testMethod1" class="SimpleTest"/>
+        <method signature="SimpleTest.testMethod2()[pri:0, instance:SimpleTest@6be46e8f]" name="testMethod2" class="SimpleTest"/>
+      </group> <!-- checkintest -->
+      <group name="functest">
+        <method signature="SimpleTest.testMethod1(java.lang.String)[pri:0, instance:SimpleTest@6be46e8f]" name="testMethod1" class="SimpleTest"/>
+        <method signature="SimpleTest.testMethod2()[pri:0, instance:SimpleTest@6be46e8f]" name="testMethod2" class="SimpleTest"/>
+        <method signature="SimpleTest.testMethod3()[pri:0, instance:SimpleTest@6be46e8f]" name="testMethod3" class="SimpleTest"/>
+      </group> <!-- functest -->
+    </groups>
+    <test name="Test1" duration-ms="183" started-at="2017-03-20T15:49:48Z" finished-at="2017-03-20T15:49:48Z">
+      <class name="SimpleTest">
+        <test-method status="PASS" signature="testMethod1(java.lang.String)[pri:0, instance:SimpleTest@6be46e8f]" name="testMethod1" duration-ms="8" started-at="2017-03-20T17:49:48Z" finished-at="2017-03-20T17:49:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[This is the value for a parameter]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethod1 -->
+        <test-method status="PASS" signature="testMethod2()[pri:0, instance:SimpleTest@6be46e8f]" name="testMethod2" duration-ms="133" started-at="2017-03-20T17:49:48Z" finished-at="2017-03-20T17:49:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethod2 -->
+        <test-method status="PASS" signature="testMethod3()[pri:0, instance:SimpleTest@6be46e8f]" name="testMethod3" duration-ms="0" started-at="2017-03-20T17:49:48Z" finished-at="2017-03-20T17:49:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethod3 -->
+      </class> <!-- SimpleTest -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Parallel test suite -->
+</testng-results>
