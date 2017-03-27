@@ -1,9 +1,11 @@
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
 import java.util.Iterator;
+
 
 public class FileManager {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -196,7 +198,74 @@ public class FileManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public void findWordExcel() throws IOException {
+        String path = pathInput();
+
+        boolean isStringNumeric;
+
+        try {
+            FileInputStream excelFile = new FileInputStream(new File(path));
+            Workbook workbook = new XSSFWorkbook(excelFile);
+            Sheet datatypeSheet = workbook.getSheetAt(0);
+            Iterator<Row> iterator = datatypeSheet.iterator();
+            Integer digit = null;
+            int val = 0;
+
+            System.out.println("Input the word or digit for search: ");
+            String text = reader.readLine();
+            isStringNumeric = StringUtils.isNumeric(text);
+
+            if (isStringNumeric) {
+                digit = Integer.parseInt(text);
+            }
+
+            while (iterator.hasNext()) {
+
+                Row currentRow = iterator.next();
+                Iterator<Cell> cellIterator = currentRow.iterator();
+
+                while (cellIterator.hasNext()) {
+
+                    Cell currentCell = cellIterator.next();
+                    //getCellTypeEnum shown as deprecated for version 3.15
+                    //getCellTypeEnum will be renamed to getCellType starting from version 4.0
+
+                    if (currentCell.getCellTypeEnum() == CellType.STRING) {
+                        if (currentCell.getStringCellValue().contains(text)) {
+                            System.out.println("The word has been found");
+                            val = 1;
+                            break;
+                        } else {
+                            val = 0;
+                        }
+                    } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
+                        if (isStringNumeric && digit == currentCell.getNumericCellValue()) {
+                            System.out.println("The digit has been found");
+                            val = 1;
+                            break;
+                        } else {
+                            val = 0;
+                        }
+                    }
+                }
+
+                if (val == 1) {
+                    break;
+                }
+            }
+
+            if (val == 0) {
+
+                System.out.println("The word/digit hasn't been found");
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public String pathInput() throws IOException {

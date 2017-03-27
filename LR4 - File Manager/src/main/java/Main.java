@@ -18,6 +18,7 @@ public class Main {
         System.out.println("5. Replace Word");
         System.out.println("6. Write Excel");
         System.out.println("7. Read Excel");
+        System.out.println("8. Find text/digit Excel");
         System.out.println("0. Exit");
 
         do {
@@ -52,6 +53,10 @@ public class Main {
 
                 case "7":
                     fm.readExcel();
+                    break;
+
+                case "8":
+                    fm.findWordExcel();
                     break;
 
                 default:
