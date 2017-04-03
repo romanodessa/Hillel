@@ -1,1 +1,5 @@
-test merge with conflict
+<<<<<<< HEAD
+test conflict
+=======
+testt merge with conflictttttt
+>>>>>>> master
