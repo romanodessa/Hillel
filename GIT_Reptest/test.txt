@@ -1,5 +1,2 @@
-<<<<<<< HEAD
-test conflict
-=======
-testt merge with conflictttttt
->>>>>>> master
+Resolve merge with conflict
+Fix is done.
