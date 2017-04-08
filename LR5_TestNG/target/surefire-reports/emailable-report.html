@@ -31,23 +31,22 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Test1</td><td class="numi">3</td><td class="numi">3</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0.2 seconds</td><td class="numi">functest </td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Test1</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0.0 seconds</td><td class="numi">CreateFileNegative </td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
 <tr><th colspan="4">Test1 &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="3">SimpleTest</td><td><a href="#m1"><b>testMethod1</b> (checkintest, functest) </a></td><td class="numi">1</td><td>1490024988209</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m2"><b>testMethod2</b> (checkintest, functest) </a></td><td class="numi">1</td><td>1490024988218</td><td class="numi">133</td></tr><tr class="passedodd"><td><a href="#m3"><b>testMethod3</b> (functest) </a></td><td class="numi">1</td><td>1490024988352</td><td class="numi">0</td></tr>
+<tr class="passedodd"><td rowspan="1">SimpleTest</td><td><a href="#m1"><b>testCreateFileNegative</b> (runAll, CreateFileNegative) </a></td><td class="numi">1</td><td>1491668004732</td><td class="numi">9</td></tr>
 </table>
 <h1>Test1</h1>
-<h2 id="m1">SimpleTest:testMethod3</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">SimpleTest:testMethod2</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">SimpleTest:testMethod1</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th></tr>
-<tr class="param stripe"><td>This is the value for a parameter</td>
-</tr>
-</table>
+<h2 id="m1">SimpleTest:testCreateFileNegative</h2>
+<div style="padding-left:3em">
+<p>No such file or directory</p>
+java.io.UnixFileSystem.createFileExclusively(Native Method)
+<br/>at java.io.File.createNewFile(File.java:1012)
+<br/>at FileManager.createFile(FileManager.java:33)
+<br/>at SimpleTest.testCreateFileNegative(SimpleTest.java:55)
+<br/>21 lines not shown
+</div>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
